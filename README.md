@@ -75,7 +75,3 @@ utils/
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-**Enjoy learning and testing your programming skills with
