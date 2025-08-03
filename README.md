@@ -1,6 +1,6 @@
 # QuizVolution AI Unleashed
 
-QuizVolution is an interactive, web-based quiz platform built with Flask. It allows users to test their programming knowledge across multiple languages and difficulty levels. Users can select their preferred languages, education level, and difficulty, and receive a personalized quiz. At the end, users get instant feedback, a detailed results page, and can download a PDF report of their performance. Optionally, results can be emailed directly to the user.
+QuizVolution is an interactive, web-based quiz platform built with Flask. It allows users to test their programming knowledge across multiple languages and difficulty levels. Users can select their preferred languages, education level, and difficulty, and receive a personalized quiz. At the end, users get instant feedback, a detailed results page, and can download a PDF report of their performance.
 
 ## Features
 
