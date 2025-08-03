@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizVolution</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/start.css') }}">
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</head>
+<body>
+    <div class="animation-container"></div>
+    <div class="container">
+        <h1>QuizVolution</h1>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Programming Languages:</label>
+                <select multiple id="languages" name="languages">
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="Go">Go</option>
+                    <option value="React">React</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JS">JS</option>
+                    <option value="NodeJS">NodeJS</option>
+                    <option value="Angular">Angular</option>
+                    <option value="all">All Languages</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="education">Education Level:</label>
+                <select id="education" name="education" required>
+                    <option value="10th">10th</option>
+                    <option value="12th">12th</option>
+                    <option value="Undergraduate">Undergraduate</option>
+                    <option value="Postgraduate">Postgraduate</option>
+                    <option value="Junior Employee">Junior Employee</option>
+                    <option value="Senior Employee">Senior Employee</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="easy">Easy</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" name="send_email"> Send results to email</label>
+            </div>
+            <button type="submit">Start Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

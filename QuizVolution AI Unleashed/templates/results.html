@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizVolution - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</head>
+<body>
+    <div class="animation-container"></div>
+    <div class="container">
+        <h1>QuizVolution Results</h1>
+        <p class="score">Score: {{ score }} / {{ total }}</p>
+        <h2>Performance Analysis</h2>
+        <p>Avg Response Time: {{ "%.2f"|format(avg_response_time) }} seconds</p>
+        <p>Languages: {{ profile.languages|join(', ') }}</p>
+        <p>Education: {{ profile.education_level }}</p>
+        <a href="/download_report" class="download-btn">Download Detailed Report</a>
+    </div>
+</body>
+</html>

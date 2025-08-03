@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizVolution - Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</head>
+<body>
+    <div class="animation-container"></div>
+    <div class="container">
+        <h1>QuizVolution - Question {{ q_num }} of {{ total }}</h1>
+        <p class="question">{{ question.question }}</p>
+        <form method="POST" action="/quiz" id="quizForm">
+            <div class="options">
+                {% for option in question.options %}
+                    <label><input type="radio" name="answer" value="{{ option[0] }}" required> {{ option }}</label>
+                {% endfor %}
+            </div>
+            <input type="hidden" name="start_time" id="startTime">
+            <button type="submit">Submit Answer</button>
+        </form>
+        {% if result %}
+            <p class="result {{ 'correct' if result == 'Correct!' else 'wrong' }}">{{ result }}</p>
+            <p class="explanation">{{ explanation }}</p>
+        {% endif %}
+    </div>
+    <script>
+        document.getElementById("startTime").value = new Date().getTime() / 1000;
+    </script>
+</body>
+</html>
